@@ -5,3 +5,4 @@
 /target
 src/main/cxx/parametric.h
 src/main/cxx/parametric.cpp
+/bin/

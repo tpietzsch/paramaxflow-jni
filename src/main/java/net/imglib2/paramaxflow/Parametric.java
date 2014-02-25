@@ -8,7 +8,9 @@ public class Parametric
 		NarHelper.loadLibrary( Parametric.class, "net.imglib2", "paramaxflow-jni" );
 	}
 
-	private static long ptr_this;
+	private final long ptr_this;
+
+//	private boolean isFinalized = false;
 
 	public Parametric( final int nodeNumMax, final int edgeNumMax )
 	{
@@ -78,8 +80,14 @@ public class Parametric
 	@Override
 	protected void finalize() throws Throwable
 	{
-		destructor( ptr_this );
-		super.finalize();
+//		if ( !isFinalized ) {
+//			isFinalized = true;
+//			System.out.println( ">>>>>>>>>>>>>>> Going to delete ptr_this=" + ptr_this );
+			destructor( ptr_this );
+			super.finalize();
+//		} else {
+//			System.out.println( ">>>>>>>>>>>>>>> SECOND ATTEMPT TO FINALIZE ON ptr_this=" + ptr_this );
+//		}
 	}
 
 	private static native long constructor( final int nodeNumMax, final int edgeNumMax );

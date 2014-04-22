@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>org.scijava</groupId>
 		<artifactId>pom-scijava</artifactId>
-		<version>1.126</version>
+		<version>1.155</version>
 	</parent>
 
 	<groupId>net.imglib2</groupId>
@@ -19,19 +19,18 @@
 	<name>jni binding to paramaxflow</name>
 
 	<properties>
-		<imglib2.version>2.0.0-SNAPSHOT</imglib2.version>
+		<imglib2.version>2.0.0-beta-26</imglib2.version>
+		<imglib2-ij.version>2.0.0-beta-26</imglib2-ij.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>net.imglib2</groupId>
 			<artifactId>imglib2</artifactId>
-			<version>${imglib2.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>net.imglib2</groupId>
 			<artifactId>imglib2-ij</artifactId>
-			<version>${imglib2.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.scif</groupId>

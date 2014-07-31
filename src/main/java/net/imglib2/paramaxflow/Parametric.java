@@ -1,11 +1,11 @@
 package net.imglib2.paramaxflow;
 
-
 public class Parametric
 {
 	static
 	{
-		NarHelper.loadLibrary( Parametric.class, "net.imglib2", "paramaxflow-jni" );
+		// Version number is added for loading the proper native library
+		NarHelper.loadLibrary( Parametric.class, "net.imglib2", "paramaxflow-jni", "1.0.0-SNAPSHOT" );
 	}
 
 	private final long ptr_this;
@@ -83,8 +83,8 @@ public class Parametric
 //		if ( !isFinalized ) {
 //			isFinalized = true;
 //			System.out.println( ">>>>>>>>>>>>>>> Going to delete ptr_this=" + ptr_this );
-			destructor( ptr_this );
-			super.finalize();
+		destructor( ptr_this );
+		super.finalize();
 //		} else {
 //			System.out.println( ">>>>>>>>>>>>>>> SECOND ATTEMPT TO FINALIZE ON ptr_this=" + ptr_this );
 //		}

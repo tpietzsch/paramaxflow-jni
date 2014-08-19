@@ -1,11 +1,13 @@
 package net.imglib2.paramaxflow;
 
+import org.scijava.nativelib.NativeLibraryUtil;
+
 public class Parametric
 {
 	static
 	{
 		// Version number is added for loading the proper native library
-		NarHelper.loadLibrary( Parametric.class, "net.imglib2", "paramaxflow-jni", "1.0.0-SNAPSHOT" );
+		NativeLibraryUtil.loadVersionedNativeLibrary(Parametric.class, "paramaxflow-jni-1.0.0-SNAPSHOT");
 	}
 
 	private final long ptr_this;
